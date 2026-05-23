@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Tech — Articles & Tutoriels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">⟨Blog<span>Tech</span>/⟩</a>
+      <nav class="nav" id="nav">
+        <a href="#articles">Articles</a>
+        <a href="#categories">Catégories</a>
+        <a href="#about">À propos</a>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__tag">✦ Nouveau · JavaScript ES2025</div>
+    <h1 class="hero__title">Apprends.<br><em>Construis.</em><br>Partage.</h1>
+    <p class="hero__sub">Articles, tutoriels et astuces pour les devs passionnés. Du HTML au DevOps.</p>
+    <div class="search-bar">
+      <span class="search-icon">⌕</span>
+      <input type="text" id="searchInput" placeholder="Rechercher un article..." />
+      <button onclick="clearSearch()">✕</button>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-cat="all">Tous</button>
+        <button class="filter-btn" data-cat="html">HTML</button>
+        <button class="filter-btn" data-cat="css">CSS</button>
+        <button class="filter-btn" data-cat="javascript">JavaScript</button>
+        <button class="filter-btn" data-cat="outils">Outils</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES GRID -->
+  <main class="container" id="articles">
+    <div class="articles-grid" id="articlesGrid">
+
+      <article class="card" data-cat="javascript">
+        <div class="card__badge">JavaScript</div>
+        <div class="card__img" style="background:#f0c27f;">
+          <span>JS</span>
+        </div>
+        <div class="card__body">
+          <h2 class="card__title">Les nouveautés ES2025 à connaître</h2>
+          <p class="card__desc">Découvrez les dernières fonctionnalités JavaScript : pattern matching, iterator helpers et bien plus.</p>
+          <div class="card__meta">
+            <span>📅 20 Mai 2025</span>
+            <span>⏱ 5 min</span>
+          </div>
+          <a href="article.html" class="card__link">Lire l'article →</a>
+        </div>
+      </article>
+
+      <article class="card featured" data-cat="css">
+        <div class="card__badge">CSS</div>
+        <div class="card__img" style="background:#a78bfa;">
+          <span>CSS</span>
+        </div>
+        <div class="card__body">
+          <h2 class="card__title">CSS Grid vs Flexbox : lequel choisir ?</h2>
+          <p class="card__desc">Un guide complet pour savoir quand utiliser Grid ou Flexbox dans vos projets web.</p>
+          <div class="card__meta">
+            <span>📅 15 Mai 2025</span>
+            <span>⏱ 7 min</span>
+          </div>
+          <a href="article.html" class="card__link">Lire l'article →</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="html">
+        <div class="card__badge">HTML</div>
+        <div class="card__img" style="background:#6ee7b7;">
+          <span>HTML</span>
+        </div>
+        <div class="card__body">
+          <h2 class="card__title">HTML sémantique : les bonnes pratiques</h2>
+          <p class="card__desc">Structurez vos pages correctement pour l'accessibilité et le SEO avec les balises sémantiques.</p>
+          <div class="card__meta">
+            <span>📅 10 Mai 2025</span>
+            <span>⏱ 4 min</span>
+          </div>
+          <a href="article.html" class="card__link">Lire l'article →</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="outils">
+        <div class="card__badge">Outils</div>
+        <div class="card__img" style="background:#fda4af;">
+          <span>GIT</span>
+        </div>
+        <div class="card__body">
+          <h2 class="card__title">Git & GitHub pour débutants</h2>
+          <p class="card__desc">Maîtrisez les commandes essentielles de Git et publiez vos projets sur GitHub facilement.</p>
+          <div class="card__meta">
+            <span>📅 5 Mai 2025</span>
+            <span>⏱ 8 min</span>
+          </div>
+          <a href="article.html" class="card__link">Lire l'article →</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="javascript">
+        <div class="card__badge">JavaScript</div>
+        <div class="card__img" style="background:#93c5fd;">
+          <span>API</span>
+        </div>
+        <div class="card__body">
+          <h2 class="card__title">Fetch API : consommer une API REST</h2>
+          <p class="card__desc">Apprenez à récupérer des données depuis une API externe avec fetch() et async/await.</p>
+          <div class="card__meta">
+            <span>📅 1 Mai 2025</span>
+            <span>⏱ 6 min</span>
+          </div>
+          <a href="article.html" class="card__link">Lire l'article →</a>
+        </div>
+      </article>
+
+      <article class="card" data-cat="css">
+        <div class="card__badge">CSS</div>
+        <div class="card__img" style="background:#fde68a;">
+          <span>✨</span>
+        </div>
+        <div class="card__body">
+          <h2 class="card__title">Animations CSS : du basique au wow effect</h2>
+          <p class="card__desc">Créez des animations fluides et percutantes avec @keyframes, transitions et transform.</p>
+          <div class="card__meta">
+            <span>📅 28 Avr 2025</span>
+            <span>⏱ 5 min</span>
+          </div>
+          <a href="article.html" class="card__link">Lire l'article →</a>
+        </div>
+      </article>
+
+    </div>
+    <p class="no-results" id="noResults" style="display:none;">Aucun article trouvé. 😕</p>
+  </main>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <div class="about__text">
+        <h2>À propos du blog</h2>
+        <p>BlogTech est un espace dédié aux développeurs en apprentissage. Des articles clairs, pratiques et accessibles sur le web moderne.</p>
+      </div>
+      <div class="about__stats">
+        <div class="stat"><span>6+</span>Articles</div>
+        <div class="stat"><span>4</span>Catégories</div>
+        <div class="stat"><span>100%</span>Gratuit</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>⟨BlogTech/⟩ — Projet GoMyCode · Phase 1 · HTML, CSS, JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Les nouveautés ES2025 — BlogTech</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .article-hero {
+      padding: 4rem 1.5rem 2rem;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+    .article-hero .card__badge {
+      position: static;
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .article-hero h1 {
+      font-family: var(--font-head);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -2px;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .article-hero .meta {
+      color: var(--text2);
+      font-size: 0.9rem;
+      display: flex; gap: 1.5rem; flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .article-cover {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #f0c27f, #e8400c);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 5rem;
+      color: white;
+      margin-bottom: 3rem;
+    }
+    .article-body {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+    .article-body h2 {
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin: 2rem 0 0.8rem;
+    }
+    .article-body p {
+      color: var(--text2);
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+    .article-body code {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.8rem 1rem;
+      display: block;
+      font-size: 0.9rem;
+      margin: 1rem 0;
+      overflow-x: auto;
+      font-family: monospace;
+      color: var(--accent);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+    .back-link:hover { gap: 1rem; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo">⟨Blog<span>Tech</span>/⟩</a>
+      <nav class="nav" id="nav">
+        <a href="index.html#articles">Articles</a>
+        <a href="index.html#categories">Catégories</a>
+        <a href="index.html#about">À propos</a>
+      </nav>
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        <button class="burger" id="burger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="article-hero">
+    <a href="index.html" class="back-link">← Retour aux articles</a>
+    <div class="card__badge">JavaScript</div>
+    <h1>Les nouveautés ES2025 à connaître</h1>
+    <div class="meta">
+      <span>📅 20 Mai 2025</span>
+      <span>⏱ 5 min de lecture</span>
+      <span>✍️ BlogTech</span>
+    </div>
+  </div>
+
+  <div class="article-cover">JS</div>
+
+  <div class="article-body">
+    <h2>Introduction</h2>
+    <p>Chaque année, le comité TC39 publie de nouvelles fonctionnalités pour JavaScript. ES2025 apporte son lot de nouveautés qui vont simplifier notre code au quotidien.</p>
+
+    <h2>1. Iterator Helpers</h2>
+    <p>Les itérateurs ont désormais des méthodes comme <strong>map()</strong>, <strong>filter()</strong> et <strong>take()</strong> directement disponibles sans avoir à tout convertir en tableau.</p>
+    <code>
+const result = [1, 2, 3, 4, 5].values()
+  .filter(n => n % 2 === 0)
+  .map(n => n * 10)
+  .toArray(); // [20, 40]
+    </code>
+
+    <h2>2. Promise.try()</h2>
+    <p>Une nouvelle méthode qui permet d'encapsuler n'importe quelle valeur ou fonction dans une promesse, qu'elle soit synchrone ou asynchrone.</p>
+    <code>
+Promise.try(() => fetchData())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+    </code>
+
+    <h2>3. Explicit Resource Management</h2>
+    <p>Le mot-clé <strong>using</strong> permet de gérer automatiquement la libération des ressources à la fin d'un bloc, similaire au <em>using</em> en C#.</p>
+    <code>
+{
+  using file = openFile('data.txt');
+  // Le fichier est automatiquement fermé ici
+}
+    </code>
+
+    <h2>Conclusion</h2>
+    <p>ES2025 continue d'améliorer JavaScript avec des fonctionnalités pratiques. Restez à jour et testez ces nouveautés dans vos projets !</p>
+  </div>
+
+  <footer class="footer">
+    <p>⟨BlogTech/⟩ — Projet GoMyCode · Phase 1 · HTML, CSS, JS</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
