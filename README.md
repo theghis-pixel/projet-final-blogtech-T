@@ -1,4 +1,4 @@
-# Blog Tech — Articles & Tutoriels
+# Blog Tech T — Articles & Tutoriels
 
 Un blog tech statique réalisé dans le cadre du projet GoMyCode Phase 1.
 
